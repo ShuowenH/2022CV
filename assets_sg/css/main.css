@@ -2295,10 +2295,11 @@ input, select, textarea {
 
 		.image.left, .image.right {
 			max-width: 60%;	
+			height:auto;
 		}
 
 			.image.left img, .image.right img {
-				width: 100%;
+				width: 80%;
 			}
 
 		.image.left {
