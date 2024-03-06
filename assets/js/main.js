@@ -116,6 +116,21 @@
 
 })(jQuery);
 
+//Get the About button
+document.addEventListener("DOMContentLoaded", function () {
+    var scrollButton = document.getElementById("btn-about");
+    var aboutSection = document.getElementById("about");
+
+    // Function to smoothly scroll to the "about" section
+    function scrollToAbout() {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Adding click event listener to the button
+    scrollButton.addEventListener("click", scrollToAbout);
+});
+
+
 //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
@@ -135,9 +150,8 @@ function scrollFunction() {
   }
 }
 // When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
+mybutton.addEventListener("click", scrollToTop);
 
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
