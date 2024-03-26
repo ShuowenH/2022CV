@@ -93,3 +93,36 @@
 			});
 
 })(jQuery);
+
+//Interview
+   const keywords = document.querySelectorAll('.keyword');
+  const bullets = document.querySelectorAll('.bullet');
+
+  keywords.forEach(keyword => {
+    keyword.addEventListener('mouseover', () => {
+      const targetSentences = keyword.getAttribute('data-target').split(',');
+      targetSentences.forEach(sentenceId => {
+        const sentence = document.getElementById(sentenceId);
+        highlightWords(sentence);
+      });
+    });
+
+    keyword.addEventListener('mouseout', () => {
+      bullets.forEach(bullet => unhighlightWords(bullet));
+    });
+  });
+
+  function highlightWords(sentence) {
+    const words = sentence.textContent.split(' ');
+    for (let i = 0; i < words.length; i++) {
+      words[i] = `<span class="highlight">${words[i]}</span>`;
+    }
+    sentence.innerHTML = words.join(' ');
+  }
+
+  function unhighlightWords(sentence) {
+    const highlightedWords = sentence.querySelectorAll('.highlight');
+    highlightedWords.forEach(word => {
+      word.outerHTML = word.innerHTML;
+    });
+  }
