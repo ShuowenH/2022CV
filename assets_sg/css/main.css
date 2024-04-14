@@ -176,11 +176,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #a2a2a2 !important;
+			color: #060640 !important;
 		}
 
 			a:hover:before {
-				color: #a2a2a2 !important;
+				color: #060640	 !important;
 			}
 
 	strong, b {
@@ -3706,7 +3706,8 @@ input, select, textarea {
     font-weight: 700;
   }
   .highlight {
-   background-color: #caf0f8;
+   color: #060640;	
+   background-color: #f0f8ff;
    transition:background-color 0.5s;
    font-weight: 700;
   }
